@@ -1,2 +1,5 @@
 # Bank_tech_test
-Bank mock
+Bank account app: 
+Aim: ability to withdraw and deposit as well as see statement (with date) through irb.
+
+Process added gems rspec, rubocop
