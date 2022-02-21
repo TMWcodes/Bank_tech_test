@@ -17,9 +17,13 @@ class BankAccount
    def withdraw(amount)
       if amount > @checking
          p "inadequate funds"
-      else @checking -= amount
+         else @checking -= amount
       end
    end
+
+
+
+
 end
 
 account = BankAccount.new(600)

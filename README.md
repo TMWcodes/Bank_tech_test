@@ -10,3 +10,10 @@ rspec --format documentation
 rubocop -A
 
 added before hook for early tests.
+
+IRB
+require './lib/Bank_account'
+account = BankAccount.new(intergers)
+account.checking = total money
+amount.deposit = add money
+amount.withdraw = substract money
