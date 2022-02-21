@@ -1,15 +1,16 @@
 
+
 class BankAccount
-   p "working"
-   
-private
+   attr_reader :checking
 
-
-
-public
-
-
+   private 
+  
+   public
+   def initialize(checking_deposit)
+      @checking = checking_deposit
+   end
 
 end
 
-p BankAccount.new
+account = BankAccount.new(600)
+p account
