@@ -38,12 +38,11 @@ describe BankAccount do
 
   it 'can quickly check balance and transaction id' do
     @account.deposit(300)
-    expect(@account.account_info).to eq("Balance is 900, with 1 transactions so far")
+    expect(@account.account_info).to eq('Balance is 900, with 1 transactions so far')
   end
 
   it 'can display formatting' do
     @account.deposit(300)
     expect(@account.display).to be_a_kind_of(Array)
   end
-
 end
