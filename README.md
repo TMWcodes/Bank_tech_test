@@ -47,5 +47,3 @@ p "withdrew money leaving a balance of #{account.withdraw(250)}"
 "withdrew money leaving a balance of 200"
 "Balance is 200, with 3 transactions so far"
 "-----"
-
-
