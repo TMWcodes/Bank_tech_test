@@ -13,7 +13,7 @@ describe BankAccount do
     expect(@account.balance).to eq(600)
   end
 
-  it 'can receive monies' do
+  it 'can receive money' do
     expect(@account.deposit(300)).to eq(900)
   end
 
@@ -31,8 +31,19 @@ describe BankAccount do
     expect(@account.transactions.count).to eq(2)
   end
 
-  it 'can record transactions with date and balance' do
+  it 'can return transactions with date and balance' do
     @account.deposit(300)
-    expect(@account.transactions).to eq([['22/02/2022', 300, 0, 900]])
+    expect(@account.transactions).to eq([[Time.new.strftime('%d/%m/%Y'), 300, 0, 900]])
   end
+
+  it 'can quickly check balance and transaction id' do
+    @account.deposit(300)
+    expect(@account.account_info).to eq("Balance is 900, with 1 transactions so far")
+  end
+
+  it 'can display formatting' do
+    @account.deposit(300)
+    expect(@account.display).to be_a_kind_of(Array)
+  end
+
 end

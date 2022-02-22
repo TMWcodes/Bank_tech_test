@@ -39,7 +39,7 @@ p "opened an account with £600"
 p "deposited money leaving a new balance of #{account.deposit(200)}"
 p "withdrew money leaving a balance of #{account.withdraw(350)}"
 p "withdrew money leaving a balance of #{account.withdraw(250)}"
-
+p account.account_info
 
 "opened an account with £600"
 "deposited money leaving a new balance of 800"
