@@ -1,1 +1,8 @@
-*.json
+coverage
+coverage/
+/coverage.data
+/coverage/
+coverage/assets/0.12.3
+.last_run.json
+.resultset.json
+resultset.json.lock
