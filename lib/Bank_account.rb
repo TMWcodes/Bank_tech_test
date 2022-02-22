@@ -7,10 +7,8 @@ class BankAccount
 
   def initialize(initial_deposit)
     @balance = initial_deposit
-    @debit_transactions = []
-    @credit_transactions = []
     @date = Time.new.strftime('%d/%m/%Y')
-    @transactions = @debit_transactions + @credit_transactions
+    @transactions = []
   end
 
   def deposit(amount)
