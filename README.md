@@ -5,7 +5,7 @@ Aim: ability to withdraw and deposit as well as see statement (with date) throug
 Process:
 added gems rspec, rubocop
 
-
+Testing and formating: 
 rspec --format documentation 
 rubocop -A
 
@@ -16,12 +16,9 @@ require './lib/Bank_account'
 account = BankAccount.new(intergers)
 account.checking = total money
 amount.deposit = add money
-amount.withdraw = substract money
+amount.withdraw = subtracts money
 
-
-withdraw debit
-deposit credit.
-
+VERSION 1
 Print as one column first
 
 opened an account with £600"
@@ -33,4 +30,22 @@ date       || transactons || balance
 22/02/2022 || 350 || 450
 [["22/02/2022", 200, 800], ["22/02/2022", 350, 450]]
 
-13:49
+
+VERSION 2
+printed as debits and credits.
+withdraw debits, deposit credits.
+
+"opened an account with £600"
+"deposited money leaving a new balance of 800"
+"withdrew money leaving a balance of 450"
+"withdrew money leaving a balance of 200"
+"Balance is 200, with 3 transactions so far"
+"-----"
+date       || credit || debit || balance
+22/02/2022 || 0 || 250 || 200
+22/02/2022 || 0 || 350 || 450
+22/02/2022 || 200 || 0 || 800
+[["22/02/2022", 0, 250, 200], ["22/02/2022", 0, 350, 450], ["22/02/2022", 200, 0, 800]]
+
+@date = Time.new.strftime("%d/%m/%Y")
+@date = Date.today.strftime("%d/%m/%Y")

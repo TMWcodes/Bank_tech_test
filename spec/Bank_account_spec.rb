@@ -23,10 +23,10 @@ describe BankAccount do
     expect(@account.withdraw(300)).to eq(300)
   end
 
-  it'can display transcations' do
-    @transactions = []
+  it'can record the number of transcations' do
     @account.deposit(300)
     @account.withdraw(300)
-    expect(@account.display).to include(@transactions)
+    expect(@account.transactions.count).to eq(2)
   end
+  
 end
