@@ -1,31 +1,60 @@
-
+require 'date'
 
 class BankAccount
-   attr_reader :checking
-
+   attr_reader :balance, :transactions
+   
    private 
   
    public
-   def initialize(checking_deposit)
-      @checking = checking_deposit
+   def initialize(initial_deposit)
+      @balance = initial_deposit
+      @transactions = []
+      @date = Time.new.strftime("%d/%m/%Y")
    end
-   
+ 
    def deposit(amount)
-      @checking  += amount
+      @balance  += amount
+      @transactions<<[@date,amount, @balance]
+      @balance
    end
 
    def withdraw(amount)
-      if amount > @checking
+      if amount > @balance
          p "inadequate funds"
-         else @checking -= amount
+      else 
+         @balance -= amount
+         @transactions<<[@date,amount, @balance]
+         @balance
       end
    end
 
+   def transactions
+       @transactions
+   end
+
+   def account_info
+      "Balance is #{@balance}," + " with #{@transactions.count} transactions so far"
+   end
 
 
-
+   def display
+      "date       || credit || debit || balance\n"
+      puts  "date       || transactons || balance\n"
+      @transactions.each do |tr|
+      puts tr.join(" || ") 
+      end
+   end
 end
 
 account = BankAccount.new(600)
-p account.deposit(300)
-p account.withdraw(300)
+p "opened an account with £600" 
+p "deposited money leaving a new balance of #{account.deposit(200)}"
+p "withdrew money leaving a balance of #{account.withdraw(350)}"
+p account.account_info
+print account.display
+# p account.transactions
+p "------"
+# p DateTime.now
+# p Date.today
+
+# p Time.new.strftime("%d/%m/%Y")

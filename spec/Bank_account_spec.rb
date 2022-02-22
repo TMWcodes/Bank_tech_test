@@ -12,7 +12,7 @@ describe BankAccount do
   end
   
   it'can return a balance' do
-    expect(@account.checking).to eq(600)
+    expect(@account.balance).to eq(600)
   end
 
   it'can receive monies' do
@@ -23,5 +23,10 @@ describe BankAccount do
     expect(@account.withdraw(300)).to eq(300)
   end
 
-
+  it'can display transcations' do
+    @transactions = []
+    @account.deposit(300)
+    @account.withdraw(300)
+    expect(@account.display).to include(@transactions)
+  end
 end
